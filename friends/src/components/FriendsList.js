@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import AddFriendForm from './AddFriendForm';
+
 function FriendsList(props) {
-  function routeToFriend(event, friend) {
-    event.preventDefault();
-    props.history.push(`/friend-list/${friend.id}`);
-  }
   return (
     <main>
+      <AddFriendForm />
       {props.friends.map(friend => (
-        <div onclick={event => routeToFriend(event, friend)} key={friend.id}>
+        <Link exact="true" to={`/friend-list/${friend.id}`} key={friend.id}>
           <p>{friend.name}</p>
           <p>{friend.age}</p>
           <p>{friend.email}</p>
-        </div>
+        </Link>
       ))
       }
     </main >
