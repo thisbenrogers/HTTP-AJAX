@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Friend(props) {
   const friend = props.friends.find(
@@ -14,6 +15,7 @@ function Friend(props) {
       <p>{friend.name}</p>
       <p>{friend.age}</p>
       <p>{friend.email}</p>
+      <Link exact="true" to="/">Home</Link>
     </div>
   )
 }
