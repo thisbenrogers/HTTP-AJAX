@@ -31,7 +31,6 @@ class App extends React.Component {
       .get("http://localhost:5000/friends")
       .then(response => this.setState({ friends: response.data }))
       .catch(error => console.log(error));
-    //     this.setState({ friends: data });
   }
 
   render() {
