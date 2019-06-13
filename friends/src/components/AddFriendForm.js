@@ -19,7 +19,7 @@ class AddFriendForm extends React.Component {
   //// add activeFriend property to our App state constructor
 
   componentDidUpdate(prevProps) {
-    if (this.props.activeFriend && prevProps.activeFriend !== this.props.activeItem) {
+    if (this.props.activeFriend && prevProps.activeFriend !== this.props.activeFriend) {
       this.setState({
         friend: this.props.activeFriend
       })
@@ -44,7 +44,7 @@ class AddFriendForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.addFriend(this.state.friend);
+    this.addFriend(this.state.friend);
     this.setState({
       friend: {
         id: "",
@@ -60,7 +60,7 @@ class AddFriendForm extends React.Component {
     return (
       <div>
         <h2>Add New Friend</h2>
-        <form>
+        <form onSubmit={this.props.handleSubmit}>
           <input
             type="text"
             name="name"
@@ -82,6 +82,7 @@ class AddFriendForm extends React.Component {
             placeholder="email"
             value={this.state.friend.email}
           />
+          <button>Add New Friend</button>
         </form>
       </div>
     )
