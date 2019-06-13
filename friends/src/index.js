@@ -25,9 +25,19 @@ class App extends React.Component {
     };
   }
 
-  // TODO add addFriend(friend) with an axios 'post'
+  //// add addFriend(friend) with an axios 'post'
 
-  // TODO pass addFriend down to AddFriendForm
+  addFriend = friend => {
+    axios
+      .post('http://localhost:5000/friends', friend)
+      .then(res => {
+        this.setState({ friends: res.data });
+        this.props.history.push('/friend-list');
+      })
+      .catch(err => console.log(err));
+  }
+
+  //// pass addFriend down to AddFriendForm
 
   updateFriends = newFriends => {
     this.setState({ friends: newFriends });
@@ -64,7 +74,7 @@ class App extends React.Component {
         <Route
           path="/friend-form"
           render={props => (
-            <AddFriendForm {...props} updateFriends={this.updateFriends} />
+            <AddFriendForm {...props} addFriend={this.addFriend} updateFriends={this.updateFriends} />
           )}
         />
       </div>
