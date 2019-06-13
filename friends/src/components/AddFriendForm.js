@@ -27,7 +27,19 @@ class AddFriendForm extends React.Component {
     }
   }
 
-  // TODO add changeHandler() and reference it in an onChange in each input on the form
+  //// add changeHandler() and reference it in an onChange in each input on the form
+
+  changeHandler = event => {
+    event.persist();
+    let value = event.target.value;
+    this.setState(prevState => ({
+      friend: {
+        ...prevState.friend,
+        [event.target.name]: value
+      }
+    }));
+  };
+
 
   // TODO add handleSubmit(event) to 1. prevent default, 2. this.props.addFriend(this.state.friend), 3. reset the state object to empty fields
 
@@ -41,18 +53,21 @@ class AddFriendForm extends React.Component {
           <input
             type="text"
             name="name"
+            onChange={this.changeHandler}
             placeholder="name"
             value={this.state.friend.name}
           />
           <input
             type="text"
             name="age"
+            onChange={this.changeHandler}
             placeholder="age"
             value={this.state.friend.age}
           />
           <input
             type="text"
             name="email"
+            onChange={this.changeHandler}
             placeholder="email"
             value={this.state.friend.email}
           />
