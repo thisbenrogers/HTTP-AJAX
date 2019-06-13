@@ -14,9 +14,18 @@ class AddFriendForm extends React.Component {
     };
   }
 
-  // TODO add 'value' to each input on form set to this.state.friend.WHATEVER
+  ////  add 'value' to each input on form set to this.state.friend.WHATEVER
 
-  // TODO add componentDidUpdate(prevProps) { if statement to setState}
+  //// add componentDidUpdate(prevProps) { if statement to setState}
+  //// add activeFriend property to our App state constructor
+
+  componentDidUpdate(prevProps) {
+    if (this.props.activeFriend && prevProps.activeFriend !== this.props.activeItem) {
+      this.setState({
+        friend: this.props.activeFriend
+      })
+    }
+  }
 
   // TODO add changeHandler() and reference it in an onChange in each input on the form
 
@@ -33,16 +42,19 @@ class AddFriendForm extends React.Component {
             type="text"
             name="name"
             placeholder="name"
+            value={this.state.friend.name}
           />
           <input
             type="text"
             name="age"
             placeholder="age"
+            value={this.state.friend.age}
           />
           <input
             type="text"
             name="email"
             placeholder="email"
+            value={this.state.friend.email}
           />
         </form>
       </div>

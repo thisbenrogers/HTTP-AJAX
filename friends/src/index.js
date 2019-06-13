@@ -20,7 +20,8 @@ class App extends React.Component {
         name: "",
         age: "",
         email: ""
-      }
+      },
+      activeFriend: null
     };
   }
 
