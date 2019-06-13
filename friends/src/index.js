@@ -7,6 +7,8 @@ import AddFriendForm from "./components/AddFriendForm";
 import FriendsList from "./components/FriendsList";
 import Friend from "./components/Friend";
 
+import './index.css';
+
 class App extends React.Component {
   // add constructor and CDM
   constructor() {
@@ -21,6 +23,10 @@ class App extends React.Component {
       }
     };
   }
+
+  // TODO add addFriend(friend) with an axios 'post'
+
+  // TODO pass addFriend down to AddFriendForm
 
   updateFriends = newFriends => {
     this.setState({ friends: newFriends });

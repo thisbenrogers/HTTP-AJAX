@@ -14,6 +14,16 @@ class AddFriendForm extends React.Component {
     };
   }
 
+  // TODO add 'value' to each input on form set to this.state.friend.WHATEVER
+
+  // TODO add componentDidUpdate(prevProps) { if statement to setState}
+
+  // TODO add changeHandler() and reference it in an onChange in each input on the form
+
+  // TODO add handleSubmit(event) to 1. prevent default, 2. this.props.addFriend(this.state.friend), 3. reset the state object to empty fields
+
+
+
   render() {
     return (
       <div>
