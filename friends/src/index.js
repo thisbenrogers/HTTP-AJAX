@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import axios from "axios";
 
-import AddFriendForm from "./components/AddFriendForm";
 import FriendsList from "./components/FriendsList";
 import Friend from "./components/Friend";
 
